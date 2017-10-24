@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo /etc/init.d/udev restart
+sudo service udev restart
+sudo udevadm control --reload
+adb_path=`which adb`
+sudo $adb_path kill-server
+sudo $adb_path devices
