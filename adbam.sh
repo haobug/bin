@@ -1,13 +1,8 @@
 #!/bin/bash
-set -x
-ptn=.
-if [ -n $1 ];
-then
-    ptn=$1
-fi
-pmpkglist $ptn|nl
+ptn=${1:-android}
+pmpkglist.sh $ptn|nl
 echo -n "which package:"
 read num
-pkgname=`pmpkglist $ptn|head -n ${num} |tail -n1|tr -d '\r'`;
+pkgname=`pmpkglist.sh $ptn|head -n ${num} |tail -n1|tr -d '\r'`;
 act=$pkgname
 adb shell am start $act
