@@ -1,0 +1,36 @@
+Windows Registry Editor Version 5.00
+
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\cmdhere]
+@="CmdHere(&Q)"
+"Icon"="C:\\windows\\system32\\cmd.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\cmdhere\command]
+@="cmd.exe /c start cmd.exe /k pushd \"%L\\..\""
+
+[HKEY_CURRENT_USER\Software\Classes\Folder\shell\cmdhere]
+@="CmdHere(&Q)"
+"Icon"="C:\\windows\\system32\\cmd.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\Folder\shell\cmdhere\command]
+@="cmd.exe /c start cmd.exe /k pushd \"%L\""
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\cmdhere]
+@="CmdHere(&Q)"
+"Icon"="C:\\windows\\system32\\cmd.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\cmdhere\command]
+@="cmd.exe /c start cmd.exe /k pushd \"%L\""
+
+
+; windows 7+ only
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background]
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\cmdhere]
+@="CmdHere(&Q)"
+"Icon"="C:\\windows\\system32\\cmd.exe,0"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\cmdhere\command]
+@="cmd.exe /k"
