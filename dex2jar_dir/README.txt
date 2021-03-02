@@ -1,4 +1,3 @@
-```
 .
 ├── bin
 ├── d2j-baksmali.bat
@@ -36,4 +35,3 @@
     └── dx-1.7.jar
 
 2 directories, 32 files
-```
