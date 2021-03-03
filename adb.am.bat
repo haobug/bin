@@ -1,0 +1,1 @@
+@bash adbam.sh %*
