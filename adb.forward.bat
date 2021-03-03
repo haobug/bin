@@ -1,0 +1,1 @@
+@bash adbforward.sh %*
