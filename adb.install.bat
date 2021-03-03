@@ -1,0 +1,1 @@
+bash adb.install.sh %*
