@@ -1,0 +1,12 @@
+#!/bin/bash
+name="myadmin"
+docker stop $name
+docker rm $name
+mysql_host=`docker inspect --format '{{ .NetworkSettings.IPAddress }}
+docker run --name=$name \
+-d \
+--env PMA_HOST=mysql1 \
+--env PMA_PORT=3306 \
+--link mysql1:db \
+-p 8090:80 \
+phpmyadmin/phpmyadmin:4.6
