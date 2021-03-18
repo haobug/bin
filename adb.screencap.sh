@@ -1,21 +1,9 @@
-#!/bin/bash
 now()
 {
 date +"%Y%m%d%H%M%S"
 }
-
-pullback()
-{
-adb shell content insert --uri content://settings/system --bind name:s:show_touches --bind value:i:0 < /dev/null
-adb pull /sdcard/$outfile
-xdg-open $outfile || mplayer $outfile
-exit 0
-}
-
-trap 'echo interrupt' INT
-
 ts=`now`
-outfile=$ts.mp4
-adb shell content insert --uri content://settings/system --bind name:s:show_touches --bind value:i:1 < /dev/null
-adb shell screenrecord $@ /sdcard/$outfile < /dev/null
-pullback
+sid=${1:-d1b990f3}
+adb -s $sid shell screencap -p /sdcard/$ts.png < /dev/null
+adb -s $sid pull /sdcard/$ts.png
+xdg-open $ts.png||eog $ts.png
