@@ -31,6 +31,10 @@ if __name__=="__main__":
         cmd_text+=" "
         cmd_text+=" -r"
     path1=os.path.realpath(path1)
+
+    if os.path.isdir(path1):
+        path1 += os.path.sep
+
     if " " in path1:
         path1 = path1.replace(" ", "\\ ")
         path1 = "\"" + path1
